@@ -1,0 +1,115 @@
+@font-face {
+	font-family: 'Barlow';
+	src: url('https://jalfry.com/fonts/Barlow-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NotoSansJP-Regular';
+	src: url('https://jalfry.com/fonts/NotoSansJP-Regular.ttf') format('truetype');
+}
+body {
+    position: fixed;
+    font-family: 'NotoSansJP-Regular', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e62a00;
+}
+
+form {
+    color: white;
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #888;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.text_input {
+    font-family: 'NotoSansJP-Regular';
+    width: 70%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+.text_input:focus {
+	outline: 1px solid white !important;
+}
+
+
+.checkbox-container {
+    margin-bottom: 20px;
+}
+
+.button {
+    font-family: 'NotoSansJP-Regular';
+    display: block;
+    width: 30%;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #e62a00;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #bf2402;
+}
+
+.forgot-password, .create-account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.checkbox {
+	text-align: center;
+	padding-bottom: 10px;
+}
+#enable_cookie {
+	background-color: transparent;
+}
+#enable_cookie:active {
+	background-color: #e62a00;
+}
+.links {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.links a {
+	color: white;
+}
+.container {
+	text-align: center;
+}

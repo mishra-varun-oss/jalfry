@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jalfry</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/css/permissions.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex flex-column h-100">  
+	  {{> header}}
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">jalfried :)</h1>
+    	<h4>admin {{username}}</h4>
+
+	<a href="/administrator" class="btn btn-secondary">back to home</a>
+  </div>
+  <div class="container">
+	  <input type="hidden" value={{{permissions}}} id="permissions">
+
+	{{#each user}}
+	<div>
+	  <input type="hidden" name="id" value={{this.id}} id="id">
+	  <div class="mb-3">
+	    <label for="exampleInputEmail1" class="form-label">username</label>
+	    <input type="text" class="form-control" id="exampleInputEmail1" name="username" value="{{{this.username}}}">
+	  </div>
+
+	  <div class="mb-3">
+	    <label for="exampleInputPassword1" class="form-label">
+		    password
+		    <button type="button" class="btn btn-info btn-sm" id="view_pass">un hide</button>
+	    </label>
+	    <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="{{{this.password}}}">
+	    <br>
+	  </div>
+
+	  <div class="mb-3">
+	    <label for="phone_number" class="form-label">phone number</label>
+	    <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{{this.phone_number}}}">
+	  </div>
+	  <br>
+	  {{#if this.permission_group}}
+	  <div class="alert alert-danger" role="alert">This user is in a group! Changing any individual permissions will remove user '{{{this.username}}}' from group '{{{this.permission_group}}}'!</div>
+	  {{/if}}
+	  <table class="table">
+		  <thead>
+			  <tr>
+				  <th scope="col"></th>
+				  {{#each ../domain}}
+				  <th scope="col">{{this}}</th>
+				  {{/each}}
+			  </tr>
+		  </thead>
+
+		  <tbody>
+			  <tr>
+				  <td>Set Permission</td>
+				  {{#each ../domain}}
+				  <td>
+					  <select class="form-select select_role" id="{{{this}}}" onchange="permissionHandler(event, this)">
+						  <option value="">None</option>
+					  </select>
+				  </td>
+				  {{/each}}
+			  </tr>
+		  </tbody>
+	  </table>
+	</div>
+	{{/each}}
+  </div>
+</main>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/edit_user.js"></script>
+      
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>analytics log configurations</title>
+	</head>
+
+	<body>
+		<h3>markerrr analytics</h3>
+
+		<p>Web traffic to our domains are being tracked by parsing Nginx log activity.</p>
+		<br>
+		<p>These are Nginx access log configurations and the information that they provide for each request that comes through.</p>
+		<p><a href="http://nginx.org/en/docs/varindex.html" target="_blank">This</a> is an alphabetical list of the variables that can be included in the access log configuration.</p>
+
+		<br>
+		<p>Current Configuration:</p>
+		<pre>
+		 log_format upstream_time '$remote_addr - $remote_user [$time_local] '
+					  '"$request" $status $body_bytes_sent '
+					  '"$http_referer" "$http_user_agent"'
+					  'rt=$request_time uct="$upstream_connect_time";
+		</pre>
+	</body>
+</html>

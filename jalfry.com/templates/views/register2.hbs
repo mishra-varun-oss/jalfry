@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="theme-color" content="#214c7c">
+		<title></title>
+
+		<link rel="stylesheet" href="/css/sso_mpengs.css">
+	</head>
+
+	<body>
+		<div class="outer_container">
+			<div class="container">
+				<form id="registration_form" method="post">
+					<div class="title">
+						<h1 id="app_name"></h1>
+						<p>Powered by Jalfry</p>
+					</div>
+					<!--<div class="img-wrapper">
+						<img src="/mp_logo.jpg">
+					</div>-->
+					<!--<p class="form-title">Welcome</p>-->
+					<p id="message">{{message}}</p>
+					<div id="form_content">
+						<div class="input-div">
+							<input class="text_input" type="text" id="username" placeholder="First Name" name="user" required autofocus>
+							<input class="text_input" type="text" id="password" placeholder="Last Name" name="pass" required>
+							<select class="select" name="role" id="role" required>
+								<option value='' selected>Select account type</option>
+							</select>
+						</div>
+
+						<div class="buttons_container">
+							<button class="button" type="submit" id="button">Register</button>
+							<button id="close_button" type="button" onclick="close_window()">Close</button>
+						</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<script src="/js/register.js"></script>
+	</body>
+</html>

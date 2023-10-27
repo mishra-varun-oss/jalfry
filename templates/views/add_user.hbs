@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jalfry</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/css/permissions.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex flex-column h-100">  
+	  {{> header}}
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">jalfried :)</h1>
+    	<h4>admin {{username}}</h4>
+	
+	<a href="/administrator" class="btn btn-secondary">back to home</a>
+  </div>
+  <div class="container">
+	<form action="/administrator/add_user" method="post">
+	  <div class="mb-3">
+	    <label for="exampleInputEmail1" class="form-label">username</label>
+	    <input type="test" class="form-control" id="exampleInputEmail1" name="username">
+	  </div>
+
+	  <div class="mb-3">
+	    <label for="exampleInputPassword1" class="form-label">password</label>
+	    <input type="text" class="form-control" id="exampleInputPassword1" name="password">
+	  </div>
+
+	  <div class="mb-3">
+	    <label for="phone_number" class="form-label">US phone number (+1)</label>
+	    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Type phone number without country code and without any spaces or hyphens. Example: 1234567890">
+	  </div>
+	  <br>
+	  <h6>Set Permissions</h6>
+	  <select id="s" class="form-select" name="type">
+		  <option value="individual">Set Individual Permissions</option>
+		  <option value="group">Select Existing Group to Add User to</option>
+	  </select>
+	  
+	  <div id="ind">
+	  <table class="table">
+		  <thead>
+			  <tr>
+				  <th scope="col"></th>
+				  {{#each domain}}
+				  <th scope="col">{{this}}</th>
+				  {{/each}}
+			  </tr>
+		  </thead>
+
+		  <tbody>
+			  <tr>
+				  <td>Set Permission</td>
+				  {{#each domain}}
+				  <td>
+					  <select class="form-select select_role" id="{{{this}}}" name="{{{this}}}">
+						  <option value="">None</option>
+					  </select>
+				  </td>
+				  {{/each}}
+			  </tr>
+		  </tbody>
+	  </table>
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	  </div>
+
+	  <div id="group">
+		  <br>
+		  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+			  Group permission selection will override any individual permissions that are set...
+		  </div>
+		  <input type="hidden" id="domains" value="{{{domain}}}">
+	<table id="table" class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Select</th>
+				<th scope="col">group name</th>
+				{{#each domain}}
+				<th scope="col">{{this}}</th>
+				{{/each}}
+			</tr>
+		</thead>
+		
+		<tbody id="tb">
+		</tbody>
+	</table>
+	  <button type="submit" id="b" class="btn btn-primary">Submit</button>
+	  </div>
+
+	</form>
+  </div>
+</main>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/add_user.js"></script>
+      
+  </body>
+</html>

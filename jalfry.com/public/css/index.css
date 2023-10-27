@@ -1,0 +1,59 @@
+.header {
+	color: white;
+	font-size: 5vw;
+	-webkit-text-stroke: 2.5px black;
+}
+
+.container {
+	font-family: Georgia, serif;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.login .input {
+	font-family: Georgia, serif;
+	text-align: center;
+	font-size: 1.5vw;
+	width: 100%;
+	background: transparent;
+	border: none;
+	border-bottom: 2.5px solid #000000;
+	padding: 5px;
+}
+
+.links {
+	color: #f59a07;
+	font-size: 1.5vw;
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+
+.message {
+	font-size: 1.5vw;
+}	
+
+#allow {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#cookie_label {	
+	font-size: 1.5vw;
+	font-family: Georgia, serif;
+}
+
+#username_cont {
+	margin: 0 auto;
+	text-align: center;
+	padding: .5vw 1.5vw;
+	font-size: 1vw;
+	color: white;
+	border: none;
+	background-color: #f59a07;
+	font-family: Georgia, serif;
+	border-radius: 10%;
+}

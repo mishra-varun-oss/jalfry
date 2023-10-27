@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>navbar</title>
+		<link rel="stylesheet" href="/css/navbar.css">
+	</head>
+
+	<body>
+		<nav>
+			<img src="https://cdn.cdnlogo.com/logos/f/89/ferrari-ges.svg">
+			<ul>
+				<li onmouseover="change_colors(this)" onmouseleave="revert_colors(this)"><a href="#">About</a></li>
+				<div class="dropdown">
+					<li onmouseover="change_colors(this)" onmouseleave="revert_colors(this)"><a href="#">Services</a></li>
+					<div class="dropdown_content">
+						<a href="#">Service 1</a>
+						<a href="#">Service 2</a>
+						<a href="#">Service 3</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<li onmouseover="change_colors(this)" onmouseleave="revert_colors(this)"><a href="#">Contact</a></li>
+					<div class="dropdown_content">
+						<a href="#">Contact 1</a>
+						<a href="#">Contact 2</a>
+						<a href="#">Contact 3</a>
+					</div>
+				</div>
+			</ul>
+		</nav>
+	</body>
+	<script src="/js/navbar.js"></script>
+</html>

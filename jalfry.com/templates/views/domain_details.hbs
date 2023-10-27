@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jalfry</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href="/css/permissions.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex flex-column h-100">  
+	  {{> header}}
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">jalfried :)</h1>
+    	<h4>admin {{username}}</h4>
+	<a href="/administrator/domains" class="btn btn-secondary">domains</a>
+  </div>
+  <br>
+
+  <h4 class="mx-5">Domain name: {{domain}}</h4>
+  <input type="hidden" id="domain_name" value="{{{domain}}}">
+  
+  <div class="mx-5">
+    <label for="s" class="form-label">
+	    token secret
+	    <button type="button" class="btn btn-info btn-sm" id="vs">un hide</button>
+    </label>
+    <input type="password" class="form-control" id="s" name="password" value="{{{secret}}}">
+    <br>
+
+    <form action="/administrator/domains" method="post">
+	    <input id="id" type="hidden" name="id" value="{{{id}}}">
+	    <label for="url">Login URL</label>
+	    <input class="form-control" id="url" type="text" name="login_url" value="{{{this.url}}}">
+	    
+	    <br>
+
+	    <input type="hidden" value="{{{approval}}}" id="ar">
+	    <select id="approval" class="form-select">
+		    <option value="Yes">Yes</option>
+		    <option value="No">No</option>
+	    </select>
+
+	    <br>
+
+	    <table id="roles" class="table table-sm"></table>
+	    <button type="button" class="btn btn-secondary btn-sm" onclick="add_role()">add role</button>
+	    <br>
+	    <br>
+
+	    <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+  </div>
+  
+  
+</main>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/domain_details.js"></script>
+      
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jalfry</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/css/permissions.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex flex-column h-100">  
+
+	  {{> header}}
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <h1 class="mt-5">jalfried :)</h1>
+    	<h4>admin {{username}}</h4>
+	<a href="/administrator" class="btn btn-primary">back</a>
+  </div>
+  <br>
+<table id="table" class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">username</th>
+			<th scope="col">application</th>
+			<th scope="col">request role</th>
+			<th scope="col">&nbsp;</th>
+		</tr>
+	</thead>
+	
+	<tbody id="tb">
+		{{#each user}}
+		<tr>
+			<td>{{this.username}}</td>
+			<td>{{this.app}}</td>
+			<td>{{this.role}}</td>
+			<td>
+				<form action="/administrator/approve_user" method="post">
+					<input type="hidden" value="{{{this.id}}}" name="id">
+					<input type="hidden" value="{{{this.username}}}" name="name">
+					<button type="submit" class="btn btn-sm btn-success">approve</button>
+				</form>
+			</td>
+			<td>
+				<form action="/administrator/delete_unapproved_user" method="post">
+					<input type="hidden" value="{{{this.id}}}" name="id">
+					<button type="submit" class="btn btn-sm btn-danger">delete</button>
+				</form>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+</main>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

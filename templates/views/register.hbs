@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>jalfry</title>
+		<link rel="stylesheet" href="/css/register.css">
+	</head>
+
+	<body>
+		<div class="outer_container">
+			<div class="container">
+				<form id="registration_form" method="post">
+					<h1 id="title"></h1>
+					<h3 id="message">{{message}}</h1>
+
+					<div id="form_content">
+						<input class="text_input" type="text" id="username" placeholder="username" name="user" required>
+						<br>
+						<input class="text_input" type="password" id="password" placeholder="password" name="pass" required>
+
+						<br>
+						<label for="phone">+1</label>
+						<input class="text_input" type="text" id="phone" placeholder="US Phone #" name="phone_number" required>
+						<div>
+							<select class="select" name="role" id="role" required>
+								<option value='' selected>request a permission level</option>
+								<option value="Admin">Admin</option>
+								<option value="User">User</option>
+							</select>
+						</div>
+						<button type="submit" id="button">register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="/js/register.js"></script>
+	</body>
+</html>

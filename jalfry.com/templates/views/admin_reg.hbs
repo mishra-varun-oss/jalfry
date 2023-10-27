@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Jalfry</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" id="login_form" action="/admin_reg" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">jalfry registration for administrators</h1>
+      <h1 class="h5 mb-3 font-weight-normal">{{message}}</h1>
+     
+      <a href="/" class="link-primary">home</a>
+      <a href="/login" class="link-primary">login</a>
+      <br>
+      <br>
+
+      <label for="username" class="sr-only">username</label>
+      <input type="text" id="username" class="form-control" placeholder="username" name="user" required autofocus>
+      <br> 
+      <label for="password" class="sr-only">password</label>
+      <input type="password" id="password" class="form-control" placeholder="password" name="pass" required>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" id="button">register</button>
+    </form>
+  </body>
+</html>

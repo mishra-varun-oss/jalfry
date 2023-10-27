@@ -1,0 +1,7 @@
+body {
+	margin: 25px 50px;
+}
+
+.table-container {
+	overflow: scroll;
+}

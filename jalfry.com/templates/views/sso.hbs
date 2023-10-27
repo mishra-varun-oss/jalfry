@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>jalfry</title>
+
+		<link rel="stylesheet" href="/css/sso_login.css">
+	</head>
+
+	<body>
+		<div class="outer_container">
+			<div class="container">
+<!--
+				<h1>jalfry login</h1>
+				<h3 id="message">{{message}}</h3>
+				<form id="login_form">
+					<label for="phone">+1</label>
+					<input class="text_input" type="text" pattern="[0-9]*" id="phone" placeholder="US Phone Number" name="phone" autofocus required>
+					<br>
+					<button type="submit" class="button">Send Code</button>
+				</form>
+
+				<br>
+				<form id="code_form">
+					<input class="text_input" type="text" pattern="[0-9]*" id="code" placeholder="Enter pin" name="code" autofocus required>
+					<div class="checkbox mb-3">
+						<label>
+							<input id="enable_cookie" type="checkbox"> allow jalfry to set cookies
+						</label>
+					</div>
+					<button type="submit" class="button" id="button">Login</button>
+				</form>
+					
+				<br>
+				<button class="button" onclick="reload()" id="tryagain" style="margin: auto">Try again</button>
+-->
+				<form id="login_form" action="/login" method="post">
+					<h1>Login</h1>
+					<h3 id="message">{{message}}</h1>
+
+					<input class="text_input" type="text" id="username" placeholder="Username" name="user" required autofocus>
+					<input class="text_input" type="password" id="password" placeholder="Password" name="pass" required>
+
+					<div class="checkbox mb-3">
+						<label>
+							<input id="enable_cookie" type="checkbox"> Allow Jalfry to set cookies
+						</label>
+					</div>
+					<button class="button" type="button" id="button">Login</button>
+
+					<div class="links">
+						<a href='/forgot_password' class="register">Forgot password</a>
+						<a id="register" class="register">Create account</a>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<script src="/js/sso_login.js"></script>
+	</body>
+</html>
