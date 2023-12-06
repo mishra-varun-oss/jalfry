@@ -22,6 +22,10 @@ const api = require(routesDirPath + "api.js");
 
 const log_parse = require(path.join(__dirname, "/tools/log_parsing.js"));
 const db = require(path.join(__dirname, "/tools/connect_jalfry.js"));
+const session_config = require(path.join(__dirname, "/tools/session_config.js"));
+const configs = require(path.join(__dirname, "/tools/configs.js"));
+
+require("dotenv").config(configs.src_config_obj);
 
 app.set("view engine", "hbs");
 app.set("views", viewsDirPath);
@@ -33,11 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cp());
-app.use(session({
-	secret: 'midnight_p0rsche',
-	resave: false,
-	saveUninitialized: true
-}))
+app.use(session(session_config.session_config))
 
 app.use("/", index);
 app.use("/administrator", administrator);
@@ -107,6 +107,7 @@ wss.on("connection", (ws, request) => {
 	})
 })
 
-server.listen(3087, () => {
-	console.log("jalfry.com is up on port 3087!");
+const port = process.env.PORT
+server.listen(port, () => {
+	console.log(`jalfry is up on port ${port}!`);
 })

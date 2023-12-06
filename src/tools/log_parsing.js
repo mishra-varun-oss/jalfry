@@ -4,6 +4,9 @@ const fs = require('fs');
 const mysql = require('mysql');
 
 const db = require(path.join(__dirname, "./connect_jalfry.js"));
+const configs = require(path.join(__dirname, "./configs.js"));
+
+require("dotenv").config(configs.tools_config_obj);
 
 module.exports.insert_data = (domains) => {
 	return new Promise((resolve, reject) => {
@@ -11,7 +14,7 @@ module.exports.insert_data = (domains) => {
 		domains.forEach((d) => {
 			c++;
 
-			fs.readFile(`/var/log/nginx/${d}.access.log`, { encoding: 'utf-8' }, (err, data) => {
+			fs.readFile(path.join(process.env.NGINX_LOG_PATH, `${d}.access.log`), { encoding: 'utf-8' }, (err, data) => {
 				if (err) {
 					return reject(err);
 				} else {
