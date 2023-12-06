@@ -19,10 +19,6 @@ const reg = require(path.join(__dirname, "../services/register.js"));
 
 require("dotenv").config(__dirname, "../../cred.env");
 
-//const twilio_account_sid = "AC0ae098138b284fe970f5e46433ea7822";
-//const twilio_auth_token = "2140bf203c6de9975bf52b3d7f22be0a";
-//const twilio_client = require('twilio')(twilio_account_sid, twilio_auth_token);
-
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
