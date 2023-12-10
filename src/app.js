@@ -19,6 +19,7 @@ const administrator = require(routesDirPath + "administrator.js");
 const access = require(routesDirPath + "access.js");
 const analytics = require(routesDirPath + "analytics.js");
 const api = require(routesDirPath + "api.js");
+const webauthn = require(routesDirPath + "webauthn.js");
 
 const log_parse = require(path.join(__dirname, "/tools/log_parsing.js"));
 const db = require(path.join(__dirname, "/tools/connect_jalfry.js"));
@@ -44,6 +45,7 @@ app.use("/administrator", administrator);
 app.use("/access", access);
 app.use("/analytics", analytics);
 app.use("/api", api);
+app.use("/webauthn", webauthn);
 
 const server = http.createServer(app);
 

@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 module.exports.new_pin = () => {
 	var length = 8,
 	charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -9,3 +11,8 @@ module.exports.new_pin = () => {
 	
 	return retVal;
 }
+module.exports.generate_challenge = () => {
+	let array = crypto.randomBytes(8);
+	return array.toString('base64');
+}
+
